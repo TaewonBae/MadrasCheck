@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		681FC19A298D28100002E5AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC199298D28100002E5AE /* AppDelegate.swift */; };
 		681FC19C298D28100002E5AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC19B298D28100002E5AE /* SceneDelegate.swift */; };
-		681FC19E298D28100002E5AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC19D298D28100002E5AE /* ViewController.swift */; };
+		681FC19E298D28100002E5AE /* AlbumController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC19D298D28100002E5AE /* AlbumController.swift */; };
 		681FC1A1298D28100002E5AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681FC19F298D28100002E5AE /* Main.storyboard */; };
 		681FC1A3298D28100002E5AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 681FC1A2298D28100002E5AE /* Assets.xcassets */; };
 		681FC1A6298D28100002E5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681FC1A4298D28100002E5AE /* LaunchScreen.storyboard */; };
+		681FC1B0298D389E0002E5AE /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */; };
+		681FC1B2298D40820002E5AE /* Madras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC1B1298D40820002E5AE /* Madras.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		681FC196298D280F0002E5AE /* madras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = madras.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		681FC199298D28100002E5AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		681FC19B298D28100002E5AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		681FC19D298D28100002E5AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		681FC19D298D28100002E5AE /* AlbumController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumController.swift; sourceTree = "<group>"; };
 		681FC1A0298D28100002E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		681FC1A2298D28100002E5AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		681FC1A5298D28100002E5AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		681FC1A7298D28100002E5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
+		681FC1B1298D40820002E5AE /* Madras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Madras.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				681FC199298D28100002E5AE /* AppDelegate.swift */,
 				681FC19B298D28100002E5AE /* SceneDelegate.swift */,
-				681FC19D298D28100002E5AE /* ViewController.swift */,
+				681FC19D298D28100002E5AE /* AlbumController.swift */,
+				681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */,
 				681FC19F298D28100002E5AE /* Main.storyboard */,
 				681FC1A2298D28100002E5AE /* Assets.xcassets */,
 				681FC1A4298D28100002E5AE /* LaunchScreen.storyboard */,
 				681FC1A7298D28100002E5AE /* Info.plist */,
+				681FC1B1298D40820002E5AE /* Madras.swift */,
 			);
 			path = madras;
 			sourceTree = "<group>";
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				681FC19E298D28100002E5AE /* ViewController.swift in Sources */,
+				681FC1B2298D40820002E5AE /* Madras.swift in Sources */,
+				681FC19E298D28100002E5AE /* AlbumController.swift in Sources */,
 				681FC19A298D28100002E5AE /* AppDelegate.swift in Sources */,
 				681FC19C298D28100002E5AE /* SceneDelegate.swift in Sources */,
+				681FC1B0298D389E0002E5AE /* AlbumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -295,6 +303,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +332,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

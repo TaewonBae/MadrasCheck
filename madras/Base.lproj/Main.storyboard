@@ -1,24 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CLh-zr-GjG">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Album Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AlbumController" customModule="madras" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bo5-84-hju" userLabel="album_tableview">
+                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumTableViewCell" rowHeight="85" id="Jq1-Jk-pxz" customClass="AlbumTableViewCell" customModule="madras" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="390" height="85"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jq1-Jk-pxz" id="7tn-2p-gO2">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="85"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E90-BO-ClU" userLabel="album_view">
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="85"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-Cn-mnD" userLabel="album_thumb">
+                                                            <rect key="frame" x="10" y="7.6666666666666643" width="70" height="70"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="70" id="ZcQ-r4-bes"/>
+                                                                <constraint firstAttribute="width" constant="70" id="eDw-FY-xbR"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앨범 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zJH-fJ-ULi" userLabel="album_title">
+                                                            <rect key="frame" x="90" y="19" width="64" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="앨범 내 이미지 수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxY-eI-JBz" userLabel="album_cnt">
+                                                            <rect key="frame" x="90" y="50" width="83" height="15"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="85" id="6Me-1x-ZMq"/>
+                                                        <constraint firstItem="zJH-fJ-ULi" firstAttribute="leading" secondItem="XA1-Cn-mnD" secondAttribute="trailing" constant="10" id="CIv-SL-Af5"/>
+                                                        <constraint firstItem="zJH-fJ-ULi" firstAttribute="top" secondItem="E90-BO-ClU" secondAttribute="top" constant="19" id="UiD-l4-X7B"/>
+                                                        <constraint firstItem="QxY-eI-JBz" firstAttribute="top" secondItem="zJH-fJ-ULi" secondAttribute="bottom" constant="10" id="dnH-Kf-8c5"/>
+                                                        <constraint firstItem="XA1-Cn-mnD" firstAttribute="leading" secondItem="E90-BO-ClU" secondAttribute="leading" constant="10" id="enD-Bc-ZTV"/>
+                                                        <constraint firstItem="QxY-eI-JBz" firstAttribute="leading" secondItem="XA1-Cn-mnD" secondAttribute="trailing" constant="10" id="lS7-hp-XG2"/>
+                                                        <constraint firstItem="XA1-Cn-mnD" firstAttribute="centerY" secondItem="E90-BO-ClU" secondAttribute="centerY" id="sMa-sd-LSZ"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="E90-BO-ClU" firstAttribute="leading" secondItem="7tn-2p-gO2" secondAttribute="leading" id="9Fu-JR-BXn"/>
+                                                <constraint firstAttribute="trailing" secondItem="E90-BO-ClU" secondAttribute="trailing" id="lWa-Kw-tvz"/>
+                                                <constraint firstAttribute="bottom" secondItem="E90-BO-ClU" secondAttribute="bottom" id="u61-zn-xnE"/>
+                                                <constraint firstItem="E90-BO-ClU" firstAttribute="top" secondItem="7tn-2p-gO2" secondAttribute="top" id="un9-ua-leE"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cnt" destination="QxY-eI-JBz" id="IPN-pq-dwJ"/>
+                                            <outlet property="thumb" destination="XA1-Cn-mnD" id="GDs-hk-N5T"/>
+                                            <outlet property="title" destination="zJH-fJ-ULi" id="te0-7u-M3E"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bo5-84-hju" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="39B-ao-7cL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bo5-84-hju" secondAttribute="bottom" id="4Zm-vO-hVs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bo5-84-hju" secondAttribute="trailing" id="VBd-yV-WPd"/>
+                            <constraint firstItem="bo5-84-hju" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iYN-k3-7m3"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="J38-Jr-t5F"/>
+                    <connections>
+                        <outlet property="album_tableview" destination="bo5-84-hju" id="QhU-5a-0M5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1033.8461538461538" y="-27.72511848341232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ta7-aY-A13">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CLh-zr-GjG" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d6N-hD-kuy">
+                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="h4Y-BD-GmJ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zfh-uY-ew3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107.63358778625954" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
