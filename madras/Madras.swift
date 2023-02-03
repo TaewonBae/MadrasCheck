@@ -7,5 +7,7 @@
 
 import Foundation
 class Madras{
+    public static var albumTitle: [String] = []
+    public static var albumCnt: [String] = []
     
 }

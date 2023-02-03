@@ -12,7 +12,7 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
     
     
     @IBOutlet weak var album_tableview: UITableView!
-    var fetchResuls: [PHFetchResult<PHAsset>] = []    //앨범 정보
+    var fetchResults: [PHFetchResult<PHAsset>] = []    //앨범 정보
     let imageManager = PHCachingImageManager()    //앨범에서 사진 받아오기 위한 객체
     var fetchOptions: PHFetchOptions {
         let fetchOptions = PHFetchOptions()
@@ -25,14 +25,13 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view.
         title = "앨범"
         checkPermission()
-        //PHPhotoLibrary.shared().register(self)
         album_tableview.delegate = self
         album_tableview.dataSource = self
         
     }
     // TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchResuls.count
+        return fetchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,13 +40,15 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         guard let cell = album_tableview.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath) as? AlbumTableViewCell else {
             return UITableViewCell()
         }
-        guard let asset = fetchResuls[indexPath.row].firstObject else {
+        guard let asset = fetchResults[indexPath.row].firstObject else {
             return UITableViewCell()
         }
         
         imageManager.requestImage(for: asset, targetSize: CGSize(width: 70, height: 70), contentMode: .aspectFill, options: nil) { (image, _) in
             cell.thumb.image = image
         }
+        cell.title.text = Madras.albumTitle[indexPath.row]
+        cell.cnt.text = Madras.albumCnt[indexPath.row]
         return cell
     }
     
@@ -79,6 +80,7 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         addAlbums(collection: favoriteList)
         addAlbums(collection: albumList)
         
+        
         OperationQueue.main.addOperation {
             self.album_tableview.reloadData()
         }
@@ -86,7 +88,14 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
     private func addAlbums(collection : PHFetchResult<PHAssetCollection>){
         for i in 0 ..< collection.count {
             let collection = collection.object(at: i)
-            self.fetchResuls.append(PHAsset.fetchAssets(in: collection, options: fetchOptions))
+            //앨범 타이틀 및 이미지count 설정
+            Madras.albumTitle.append(collection.localizedTitle!)
+            // 아래와 같이 불러올 경우 숫자 에러
+//            Madras.albumCnt.append(String(collection.estimatedAssetCount))
+            let assetsFetchResult: PHFetchResult = PHAsset.fetchAssets(in: collection, options: nil)
+            Madras.albumCnt.append(String(assetsFetchResult.count))
+            self.fetchResults.append(PHAsset.fetchAssets(in: collection, options: fetchOptions))
+            
         }
     }
 }

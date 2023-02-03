@@ -62,13 +62,13 @@
 			children = (
 				681FC199298D28100002E5AE /* AppDelegate.swift */,
 				681FC19B298D28100002E5AE /* SceneDelegate.swift */,
+				681FC1B1298D40820002E5AE /* Madras.swift */,
 				681FC19D298D28100002E5AE /* AlbumController.swift */,
 				681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */,
 				681FC19F298D28100002E5AE /* Main.storyboard */,
 				681FC1A2298D28100002E5AE /* Assets.xcassets */,
 				681FC1A4298D28100002E5AE /* LaunchScreen.storyboard */,
 				681FC1A7298D28100002E5AE /* Info.plist */,
-				681FC1B1298D40820002E5AE /* Madras.swift */,
 			);
 			path = madras;
 			sourceTree = "<group>";

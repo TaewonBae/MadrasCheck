@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Album Controller-->
+        <!--앨범-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="AlbumController" customModule="madras" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E90-BO-ClU" userLabel="album_view">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="85"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-Cn-mnD" userLabel="album_thumb">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XA1-Cn-mnD" userLabel="album_thumb">
                                                             <rect key="frame" x="10" y="7.6666666666666643" width="70" height="70"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="70" id="ZcQ-r4-bes"/>
@@ -88,7 +88,7 @@
                             <constraint firstItem="bo5-84-hju" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iYN-k3-7m3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="J38-Jr-t5F"/>
+                    <navigationItem key="navigationItem" title="앨범" id="J38-Jr-t5F"/>
                     <connections>
                         <outlet property="album_tableview" destination="bo5-84-hju" id="QhU-5a-0M5"/>
                     </connections>
