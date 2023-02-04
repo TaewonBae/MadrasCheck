@@ -46,7 +46,7 @@ class GalleryController: UIViewController, UICollectionViewDelegate, UICollectio
         }else{
             //생성날짜 최근거부터 정렬(내림차순)
             let userAlbumList: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
-            let userAlbum: PHAssetCollection = userAlbumList.object(at: Madras.currentIdx-2) //
+            let userAlbum: PHAssetCollection = userAlbumList.object(at: Madras.currentIdx-2) 
             self.allMedia = PHAsset.fetchAssets(in: userAlbum, options: creationDateFet)
             // MAKR: - 특정 타입(PHAssetMediaType) 미디어만 가져오는 메소드
             //self.allMedia = PHAsset.fetchAssets(with: .image, options: nil)
