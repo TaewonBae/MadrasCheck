@@ -15,6 +15,8 @@
 		681FC1A6298D28100002E5AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 681FC1A4298D28100002E5AE /* LaunchScreen.storyboard */; };
 		681FC1B0298D389E0002E5AE /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */; };
 		681FC1B2298D40820002E5AE /* Madras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC1B1298D40820002E5AE /* Madras.swift */; };
+		681FC1B4298D6A1B0002E5AE /* GalleryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC1B3298D6A1B0002E5AE /* GalleryController.swift */; };
+		681FC1B6298D6A3D0002E5AE /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 681FC1B5298D6A3D0002E5AE /* GalleryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		681FC1A7298D28100002E5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 		681FC1B1298D40820002E5AE /* Madras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Madras.swift; sourceTree = "<group>"; };
+		681FC1B3298D6A1B0002E5AE /* GalleryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryController.swift; sourceTree = "<group>"; };
+		681FC1B5298D6A3D0002E5AE /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				681FC1B1298D40820002E5AE /* Madras.swift */,
 				681FC19D298D28100002E5AE /* AlbumController.swift */,
 				681FC1AF298D389E0002E5AE /* AlbumTableViewCell.swift */,
+				681FC1B3298D6A1B0002E5AE /* GalleryController.swift */,
+				681FC1B5298D6A3D0002E5AE /* GalleryCollectionViewCell.swift */,
 				681FC19F298D28100002E5AE /* Main.storyboard */,
 				681FC1A2298D28100002E5AE /* Assets.xcassets */,
 				681FC1A4298D28100002E5AE /* LaunchScreen.storyboard */,
@@ -144,10 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				681FC1B4298D6A1B0002E5AE /* GalleryController.swift in Sources */,
 				681FC1B2298D40820002E5AE /* Madras.swift in Sources */,
 				681FC19E298D28100002E5AE /* AlbumController.swift in Sources */,
 				681FC19A298D28100002E5AE /* AppDelegate.swift in Sources */,
 				681FC19C298D28100002E5AE /* SceneDelegate.swift in Sources */,
+				681FC1B6298D6A3D0002E5AE /* GalleryCollectionViewCell.swift in Sources */,
 				681FC1B0298D389E0002E5AE /* AlbumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
