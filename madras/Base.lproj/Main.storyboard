@@ -75,6 +75,7 @@
                                             <outlet property="cnt" destination="QxY-eI-JBz" id="IPN-pq-dwJ"/>
                                             <outlet property="thumb" destination="XA1-Cn-mnD" id="GDs-hk-N5T"/>
                                             <outlet property="title" destination="zJH-fJ-ULi" id="te0-7u-M3E"/>
+                                            <segue destination="tJT-G6-Y9z" kind="show" id="EWO-af-Zgd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -106,15 +107,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ee-11-Eoh">
-                                <rect key="frame" x="0.0" y="47" width="390" height="44"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <items>
-                                    <navigationItem title="Title" id="jbq-UI-abP"/>
-                                </items>
-                            </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F0Q-qB-Zi0" userLabel="gallery_collectionview">
                                 <rect key="frame" x="0.0" y="91" width="390" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,18 +145,15 @@
                         <viewLayoutGuide key="safeArea" id="0P6-Vg-8ue"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="F0Q-qB-Zi0" firstAttribute="top" secondItem="9Ee-11-Eoh" secondAttribute="bottom" id="2Ke-Aj-IrL"/>
-                            <constraint firstItem="9Ee-11-Eoh" firstAttribute="trailing" secondItem="0P6-Vg-8ue" secondAttribute="trailing" id="4pW-rX-xVV"/>
                             <constraint firstItem="F0Q-qB-Zi0" firstAttribute="leading" secondItem="0P6-Vg-8ue" secondAttribute="leading" id="8ws-ku-1c2"/>
                             <constraint firstItem="0P6-Vg-8ue" firstAttribute="bottom" secondItem="F0Q-qB-Zi0" secondAttribute="bottom" id="9jQ-Aa-7ly"/>
-                            <constraint firstItem="9Ee-11-Eoh" firstAttribute="leading" secondItem="0P6-Vg-8ue" secondAttribute="leading" id="HWq-7j-Ovf"/>
-                            <constraint firstItem="9Ee-11-Eoh" firstAttribute="top" secondItem="0P6-Vg-8ue" secondAttribute="top" id="T5B-XS-FAY"/>
+                            <constraint firstItem="F0Q-qB-Zi0" firstAttribute="top" secondItem="0P6-Vg-8ue" secondAttribute="top" id="kUT-53-onb"/>
                             <constraint firstItem="0P6-Vg-8ue" firstAttribute="trailing" secondItem="F0Q-qB-Zi0" secondAttribute="trailing" id="qhU-wY-uuQ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Jyh-ZK-49Y"/>
                     <connections>
                         <outlet property="gallery_collectionview" destination="F0Q-qB-Zi0" id="VTq-ga-3QK"/>
-                        <outlet property="navigationItem_" destination="jbq-UI-abP" id="0i9-LM-7PE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pw1-El-9TU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@ import UIKit
 import Photos
 class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var album_tableview: UITableView!
+    @IBOutlet weak var album_tableview: UITableView! //AlbumController tableview 변수
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +50,7 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         nextVC.modalPresentationStyle = .overFullScreen
         
         Madras.currentIdx = indexPath.row
-        Madras.strName = Madras.albumTitle[indexPath.row]
         Madras.galleryTitle = Madras.albumTitle[indexPath.row]
-        print(Madras.strName)
-        print(Madras.currentIdx)
-        print(Madras.fetchOptions)
-        self.present(nextVC, animated: true)
         
     }
     
@@ -107,29 +102,5 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "picture"{
-//            guard let nextView: GalleryController = segue.destination as? GalleryController else{
-//                return
-//            }
-//            
-//            // 해당 (눌린) 셀 불러오기
-//            guard let cell: GalleryCollectionViewCell = sender as? GalleryCollectionViewCell else{
-//                return
-//            }
-//            
-//            //선택된 셀의 index
-//            guard let index: IndexPath = self.album.indexPath(for: cell) else{
-//                return
-//            }
-//            
-//            // 선택된 앨범의 사진을 다음 뷰컨트롤러에 넘겨준다.
-//            nextView.pictures = userAsset[index.item]
-//            nextView.albumName = self.albumName[index.item]
-//            nextView.albumindex = index.item
-//            print(index.item)
-//        }
-//        
-//    }
 }
 
