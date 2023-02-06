@@ -15,7 +15,7 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         title = "앨범"
-        checkPermission()
+        cameraPermission() // 사진첩 접근 설정
         album_tableview.delegate = self
         album_tableview.dataSource = self
         
@@ -49,14 +49,32 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
         let nextVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "GalleryController") as! GalleryController
         nextVC.modalPresentationStyle = .overFullScreen
         
-        Madras.currentIdx = indexPath.row
+        Madras.currentIdx = indexPath.row // 현재 인덱스(몇번째 테이블 cell인지)
         Madras.galleryTitle = Madras.albumTitle[indexPath.row]
+        
+        let creationDateFet = PHFetchOptions() //생성날짜 최신순으로 정렬(내림차순)
+        creationDateFet.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        //각 폴더 내 이미지 데이터 setting
+        if(Madras.currentIdx == 0){ // Device내 전체 이미지
+            let userAlbumList: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumUserLibrary, options: nil)
+            let userAlbum: PHAssetCollection = userAlbumList.object(at: 0)
+            Madras.allImage = PHAsset.fetchAssets(in: userAlbum, options: creationDateFet)
+        }else if(Madras.currentIdx == 1){ //좋아요 누른 이미지(Favorites 폴더)
+            let userAlbumList: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .smartAlbum, subtype: .smartAlbumFavorites, options: nil)
+            let userAlbum: PHAssetCollection = userAlbumList.object(at: 0)
+            Madras.allImage = PHAsset.fetchAssets(in: userAlbum, options: creationDateFet)
+        }else{ // 나머지 생성된 폴더
+            let userAlbumList: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .albumRegular, options: nil)
+            let userAlbum: PHAssetCollection = userAlbumList.object(at: Madras.currentIdx-2)
+            Madras.allImage = PHAsset.fetchAssets(in: userAlbum, options: creationDateFet)
+            
+        }
         
     }
     
     
     // 사진첩 접근에 대한 permission
-    func checkPermission() {
+    func cameraPermission() {
         switch PHPhotoLibrary.authorizationStatus() {
         case .authorized:
             self.requestImageCollection()
@@ -91,10 +109,8 @@ class AlbumController: UIViewController,UITableViewDelegate, UITableViewDataSour
     private func addAlbums(collection : PHFetchResult<PHAssetCollection>){
         for i in 0 ..< collection.count {
             let collection = collection.object(at: i)
-            //앨범 타이틀 및 이미지coucnt 설정
+            //앨범 타이틀 및 앨범내 이미지 개수 설정
             Madras.albumTitle.append(collection.localizedTitle!)
-            // 아래와 같이 불러올 경우 숫자 에러
-//            Madras.albumCnt.append(String(collection.estimatedAssetCount))
             let assetsFetchResult: PHFetchResult = PHAsset.fetchAssets(in: collection, options: nil)
             Madras.albumCnt.append(String(assetsFetchResult.count))
             Madras.fetchResults.append(PHAsset.fetchAssets(in: collection, options: Madras.fetchOptions))

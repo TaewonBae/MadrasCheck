@@ -20,7 +20,7 @@ class Madras{
     public static var currentIdx = 0 //Album index값
     public static var albumTitle: [String] = [] //앨범별 이름
     public static var albumCnt: [String] = [] //앨범별 개수
-    
+    public static var allImage: PHFetchResult<PHAsset>? //앨범 내 모든 이미지
     //GalleryController
     public static var galleryTitle = "" //Navigation Title(앨범 이름)
 }

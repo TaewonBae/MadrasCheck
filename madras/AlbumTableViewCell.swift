@@ -9,12 +9,11 @@ import UIKit
 
 class AlbumTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var thumb: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var cnt: UILabel!
+    @IBOutlet weak var thumb: UIImageView! //앨범 썸네일 이미지
+    @IBOutlet weak var title: UILabel! //앨범 타이틀
+    @IBOutlet weak var cnt: UILabel! //앨범내 이미지 수
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
