@@ -12,11 +12,7 @@ class GalleryController: UIViewController{
     
     
     @IBOutlet weak var gallery_collectionview: UICollectionView!
-    
-    var allMedia: PHFetchResult<PHAsset>?
-    
-    let scale = UIScreen.main.scale
-    var thumbnailSize = CGSize.zero
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Madras.galleryTitle //앨범 타이틀
@@ -25,14 +21,8 @@ class GalleryController: UIViewController{
         gallery_collectionview.delegate = self
         gallery_collectionview.dataSource = self
         
-        
-        self.thumbnailSize = CGSize(width: 1024 * self.scale, height: 1024 * self.scale)
-        
+        Madras.thumbnailSize = CGSize(width: 1024 * Madras.scale, height: 1024 * Madras.scale)
         self.gallery_collectionview.reloadData()
-        
-        
-        
-        
     }
     
     
@@ -60,19 +50,16 @@ class GalleryController: UIViewController{
     }
     
 }
-// 셀 간격 조정 및 셀 크기 조정 하는 함수들 >> 안먹힘 : 스토리보드에서 estimate size = none 해줘야 적용가능
+// // 셀 간격 조정 및 셀 크기 조정 하는 함수들 (안먹힘 : 스토리보드에서 estimate size = none 해줘야 적용가능)
 extension GalleryController: UICollectionViewDelegateFlowLayout {
-    
     // 위 아래 간격 : 4pt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
-    
     // 옆 간격 : 4pt
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
-    
     // cell 사이즈( 옆 라인을 고려하여 설정 )
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         // 전체 width에서 4pt 두칸의 여백을 빼준 뒤 3을 나눠주면  셀 하나의 width를 구할 수 있다.
@@ -81,20 +68,18 @@ extension GalleryController: UICollectionViewDelegateFlowLayout {
         let size = CGSize(width: width, height: width)
         return size
     }
-    
 }
 extension GalleryController: UICollectionViewDelegate, UICollectionViewDataSource{
-    
-    // collectionView
+    // collectionView 지정된 섹션에 표시할 항목의 개수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return Madras.allImage?.count ?? 0
     }
-    
+    // 컬렉션뷰의 지정된 위치에 표시할 cell 요청
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GalleryCollectionViewCell", for: indexPath) as! GalleryCollectionViewCell
         
         let asset = Madras.allImage?[indexPath.item]
-        LocalImageManager.shared.requestIamge(with: asset, thumbnailSize: self.thumbnailSize) { (image) in
+        LocalImageManager.shared.requestIamge(with: asset, thumbnailSize: Madras.thumbnailSize) { (image) in
             cell.gallery_img.image = image
         }
         return cell
